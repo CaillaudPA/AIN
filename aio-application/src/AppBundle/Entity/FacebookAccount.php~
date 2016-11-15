@@ -19,8 +19,10 @@ use Doctrine\ORM\Mapping as ORM;
 class FacebookAccount
 {
     /**
-     * @var integer
-     * @ORM\Column(type="interger")
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
      */
     private $id;
 
@@ -34,4 +36,52 @@ class FacebookAccount
 
 
 
+
+    /**
+     * Set id
+     *
+     * @param \interger $id
+     *
+     * @return FacebookAccount
+     */
+    public function setId(\interger $id)
+    {
+        $this->id = $id;
+
+        return $this;
+    }
+
+    /**
+     * Get id
+     *
+     * @return \interger
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \AppBundle\Entity\User $user
+     *
+     * @return FacebookAccount
+     */
+    public function setUser(\AppBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \AppBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
 }
