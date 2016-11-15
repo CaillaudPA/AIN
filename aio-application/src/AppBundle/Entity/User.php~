@@ -34,17 +34,23 @@ class User extends BaseUser
      * @ORM\OneToMany(targetEntity="TwitterAccount", mappedBy="user")
      */
     private $twitteraccount;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="GoogleAccount", mappedBy="user")
+     */
+    private $googleaccount;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="YoutubeAccount", mappedBy="user")
+     */
+    private $youtubeacount;
 
     public function __construct()
     {
         parent::__construct();
         // your own logic
     }
-
-
-
-
-
+    
     /**
      * Add facebookaccount
      *
