@@ -19,8 +19,10 @@ use Doctrine\ORM\Mapping as ORM;
 class TwitterAccount
 {
     /**
-     * @var integer
-     * @ORM\Column(type="interger")
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
      */
     private $id;
 
