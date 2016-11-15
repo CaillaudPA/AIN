@@ -25,9 +25,91 @@ class User extends BaseUser
      */
     protected $id;
 
+    /**
+     * @ORM\OneToMany(targetEntity="FacebookAccount", mappedBy="user")
+     */
+    private $facebookaccount;
+
+    /**
+     * @ORM\OneToMany(targetEntity="TwitterAccount", mappedBy="user")
+     */
+    private $twitteraccount;
+
     public function __construct()
     {
         parent::__construct();
         // your own logic
+    }
+
+
+
+
+
+    /**
+     * Add facebookaccount
+     *
+     * @param \AppBundle\Entity\FacebookAccount $facebookaccount
+     *
+     * @return User
+     */
+    public function addFacebookaccount(\AppBundle\Entity\FacebookAccount $facebookaccount)
+    {
+        $this->facebookaccount[] = $facebookaccount;
+
+        return $this;
+    }
+
+    /**
+     * Remove facebookaccount
+     *
+     * @param \AppBundle\Entity\FacebookAccount $facebookaccount
+     */
+    public function removeFacebookaccount(\AppBundle\Entity\FacebookAccount $facebookaccount)
+    {
+        $this->facebookaccount->removeElement($facebookaccount);
+    }
+
+    /**
+     * Get facebookaccount
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getFacebookaccount()
+    {
+        return $this->facebookaccount;
+    }
+
+    /**
+     * Add twitteraccount
+     *
+     * @param \AppBundle\Entity\TwitterAccount $twitteraccount
+     *
+     * @return User
+     */
+    public function addTwitteraccount(\AppBundle\Entity\TwitterAccount $twitteraccount)
+    {
+        $this->twitteraccount[] = $twitteraccount;
+
+        return $this;
+    }
+
+    /**
+     * Remove twitteraccount
+     *
+     * @param \AppBundle\Entity\TwitterAccount $twitteraccount
+     */
+    public function removeTwitteraccount(\AppBundle\Entity\TwitterAccount $twitteraccount)
+    {
+        $this->twitteraccount->removeElement($twitteraccount);
+    }
+
+    /**
+     * Get twitteraccount
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTwitteraccount()
+    {
+        return $this->twitteraccount;
     }
 }
