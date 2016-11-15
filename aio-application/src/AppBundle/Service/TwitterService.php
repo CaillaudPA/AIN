@@ -1,4 +1,5 @@
 <?php
+namespace AppBundle\Service;
 
 /**
  * Created by PhpStorm.

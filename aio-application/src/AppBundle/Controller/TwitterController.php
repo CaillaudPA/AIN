@@ -1,12 +1,10 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: robin
- * Date: 15/11/2016
- * Time: 14:26
- */
-class TwitterController
-{
+namespace AppBundle\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+
+class TwitterController extends Controller
+{
 }
