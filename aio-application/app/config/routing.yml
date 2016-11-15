@@ -1,4 +1,4 @@
-app:
-    resource: "@AppBundle/Controller/"
+facebook_connect:
+    resource: "@facebookConnectBundle/Controller/"
     type:     annotation
-
+    prefix:   /
