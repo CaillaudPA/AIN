@@ -26,7 +26,7 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="FacebookAccount", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="FacebookAccount", mappedBy="user", cascade={"persist", "remove"})
      */
     private $facebookaccount;
 
@@ -43,7 +43,7 @@ class User extends BaseUser
     /**
      * @ORM\OneToMany(targetEntity="YoutubeAccount", mappedBy="user")
      */
-    private $youtubeacount;
+    private $youtubeaccount;
 
     public function __construct()
     {
@@ -185,5 +185,39 @@ class User extends BaseUser
     public function getYoutubeacount()
     {
         return $this->youtubeacount;
+    }
+
+    /**
+     * Add youtubeaccount
+     *
+     * @param \AppBundle\Entity\YoutubeAccount $youtubeaccount
+     *
+     * @return User
+     */
+    public function addYoutubeaccount(\AppBundle\Entity\YoutubeAccount $youtubeaccount)
+    {
+        $this->youtubeaccount[] = $youtubeaccount;
+
+        return $this;
+    }
+
+    /**
+     * Remove youtubeaccount
+     *
+     * @param \AppBundle\Entity\YoutubeAccount $youtubeaccount
+     */
+    public function removeYoutubeaccount(\AppBundle\Entity\YoutubeAccount $youtubeaccount)
+    {
+        $this->youtubeaccount->removeElement($youtubeaccount);
+    }
+
+    /**
+     * Get youtubeaccount
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getYoutubeaccount()
+    {
+        return $this->youtubeaccount;
     }
 }

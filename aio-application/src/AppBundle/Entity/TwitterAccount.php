@@ -28,7 +28,7 @@ class TwitterAccount
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="twitteraccount")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $user;
