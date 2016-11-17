@@ -1,6 +1,6 @@
 <?php
 
-namespace facebookConnectBundle\Controller;
+namespace AppBundle\Controller;
 
 use AppBundle\Entity\FacebookAccount;
 use AppBundle\Entity\User;
@@ -18,7 +18,7 @@ class DefaultController extends Controller
 
 
 
-        return $this->render('facebookConnectBundle:Default:index.html.twig');
+        return $this->render('AppBundle:Default:index.html.twig');
     }
 
     /**
