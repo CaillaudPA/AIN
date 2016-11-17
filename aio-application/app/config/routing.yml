@@ -8,6 +8,12 @@ appBundle:
     type:     annotation
     prefix:   /
 
+twitter_connect:
+    resource: "@AppBundle/Controller/TwitterController.php"
+    prefix:   /twitter_connect
+    type:     annotation
+
+
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 

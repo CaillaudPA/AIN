@@ -24,6 +24,7 @@
         "incenteev/composer-parameter-handler": "^2.0",
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "hwi/oauth-bundle": "^0.5.1",
+        "endroid/twitter": "^1.2"
         "symfony/assetic-bundle": "^2.8"
     },
     "require-dev": {
