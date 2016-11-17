@@ -1,0 +1,6 @@
+# On met tout nos token ici
+parameters:
+    twitter.consumer_key: uxu38Zxxau5wSvyHNvv4Z4F2F
+    twitter.consumer_secret: 2l1Qe7Nq3Hf8qaBVMz6sBt0WfyT50huXSug39qjgEk7xcUe6Pq
+    twitter.access_token: 1470332905-iOZjLk8oc85TsnB3bYhjfe5pL5zGxhoZRcnSonQ
+    twitter.access_secret: nnMMGDsUxh5fO3Ql2L9EZVGzZb5RalrSReu7yBUnTwTua
