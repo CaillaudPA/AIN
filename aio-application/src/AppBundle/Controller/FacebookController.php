@@ -1,6 +1,6 @@
 <?php
 
-namespace facebookConnectBundle\Controller;
+namespace AppBundle\Controller;
 
 use AppBundle\Entity\FacebookAccount;
 use AppBundle\Entity\User;
@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Response;
 
-class DefaultController extends Controller
+class FacebookController extends Controller
 {
     /**
      * @Route("/facebookConnect")
@@ -18,7 +18,7 @@ class DefaultController extends Controller
 
 
 
-        return $this->render('facebookConnectBundle:Default:index.html.twig');
+        return $this->render('AppBundle:Default:index.html.twig');
     }
 
     /**

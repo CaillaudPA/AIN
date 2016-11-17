@@ -40,11 +40,9 @@ class GoogleAccount
     /**
      * Set id
      *
-     * @param \interger $id
-     *
      * @return FacebookAccount
      */
-    public function setId(\interger $id)
+    public function setId($id)
     {
         $this->id = $id;
 

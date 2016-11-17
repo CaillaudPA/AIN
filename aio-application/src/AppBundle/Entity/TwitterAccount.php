@@ -40,11 +40,11 @@ class TwitterAccount
     /**
      * Set id
      *
-     * @param \interger $id
+     * @param  $id
      *
      * @return TwitterAccount
      */
-    public function setId(\interger $id)
+    public function setId($id)
     {
         $this->id = $id;
 
@@ -54,7 +54,7 @@ class TwitterAccount
     /**
      * Get id
      *
-     * @return \interger
+     * @return $id
      */
     public function getId()
     {
