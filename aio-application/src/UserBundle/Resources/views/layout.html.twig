@@ -1,3 +1,15 @@
+{% block stylesheets %}
+    {% stylesheets 'bundles/app/css/externe/*' %}
+    <link rel="stylesheet" href="{{ asset_url }}" />
+    {% endstylesheets %}
+{% endblock stylesheets %}
+{% block javascripts %}
+    {% javascripts '@AppBundle/Resources/public/js/externe/*' %}
+    <script src="{{ asset_url }}"></script>
+    {% endjavascripts %}
+{% endblock javascripts %}
+
+
 {% block body %}
 
     {% for key, message in app.session.flashbag.all() %}
