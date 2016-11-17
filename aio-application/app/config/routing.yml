@@ -1,9 +1,10 @@
+
 user:
     resource: "@UserBundle/Resources/config/routing.yml"
     prefix:   /
 
-facebook_connect:
-    resource: "@facebookConnectBundle/Controller/"
+appBundle:
+    resource: "@AppBundle/Controller/"
     type:     annotation
     prefix:   /
 
