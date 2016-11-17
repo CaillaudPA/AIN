@@ -82,6 +82,8 @@
             console.log('Successful login for: ' + response.name);
             document.getElementById('status').innerHTML =
                     'Thanks for logging in, ' + response.name + '!';
+            console.log(response);
+            addFacebookAccount(response.id);
         });
     }
 </script>
@@ -99,4 +101,25 @@
 </div>
 
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<script>
+
+    function addFacebookAccount(userID) {
+        route="{{ path('add_facebook_account', {'id': "userID"}) }}"
+        route = route.replace("userID", userID);
+
+        $.ajax({
+            url: route,
+            success: function (response) {
+                console.log("id to controller " + response)
+            },
+            error: function (error) {
+                console.log(error);
+            }
+        });
+
+    }
+
+</script>
 </html>

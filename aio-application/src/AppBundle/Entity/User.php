@@ -26,7 +26,7 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="FacebookAccount", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="FacebookAccount", mappedBy="user", cascade={"persist", "remove"})
      */
     private $facebookaccount;
 
@@ -34,6 +34,16 @@ class User extends BaseUser
      * @ORM\OneToMany(targetEntity="TwitterAccount", mappedBy="user")
      */
     private $twitteraccount;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="GoogleAccount", mappedBy="user")
+     */
+    private $googleaccount;
+    
+    /**
+     * @ORM\OneToMany(targetEntity="YoutubeAccount", mappedBy="user")
+     */
+    private $youtubeaccount;
 
     public function __construct()
     {
@@ -107,5 +117,107 @@ class User extends BaseUser
     public function getTwitteraccount()
     {
         return $this->twitteraccount;
+    }
+
+    /**
+     * Add googleaccount
+     *
+     * @param \AppBundle\Entity\GoogleAccount $googleaccount
+     *
+     * @return User
+     */
+    public function addGoogleaccount(\AppBundle\Entity\GoogleAccount $googleaccount)
+    {
+        $this->googleaccount[] = $googleaccount;
+
+        return $this;
+    }
+
+    /**
+     * Remove googleaccount
+     *
+     * @param \AppBundle\Entity\GoogleAccount $googleaccount
+     */
+    public function removeGoogleaccount(\AppBundle\Entity\GoogleAccount $googleaccount)
+    {
+        $this->googleaccount->removeElement($googleaccount);
+    }
+
+    /**
+     * Get googleaccount
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getGoogleaccount()
+    {
+        return $this->googleaccount;
+    }
+
+    /**
+     * Add youtubeacount
+     *
+     * @param \AppBundle\Entity\YoutubeAccount $youtubeacount
+     *
+     * @return User
+     */
+    public function addYoutubeacount(\AppBundle\Entity\YoutubeAccount $youtubeacount)
+    {
+        $this->youtubeacount[] = $youtubeacount;
+
+        return $this;
+    }
+
+    /**
+     * Remove youtubeacount
+     *
+     * @param \AppBundle\Entity\YoutubeAccount $youtubeacount
+     */
+    public function removeYoutubeacount(\AppBundle\Entity\YoutubeAccount $youtubeacount)
+    {
+        $this->youtubeacount->removeElement($youtubeacount);
+    }
+
+    /**
+     * Get youtubeacount
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getYoutubeacount()
+    {
+        return $this->youtubeacount;
+    }
+
+    /**
+     * Add youtubeaccount
+     *
+     * @param \AppBundle\Entity\YoutubeAccount $youtubeaccount
+     *
+     * @return User
+     */
+    public function addYoutubeaccount(\AppBundle\Entity\YoutubeAccount $youtubeaccount)
+    {
+        $this->youtubeaccount[] = $youtubeaccount;
+
+        return $this;
+    }
+
+    /**
+     * Remove youtubeaccount
+     *
+     * @param \AppBundle\Entity\YoutubeAccount $youtubeaccount
+     */
+    public function removeYoutubeaccount(\AppBundle\Entity\YoutubeAccount $youtubeaccount)
+    {
+        $this->youtubeaccount->removeElement($youtubeaccount);
+    }
+
+    /**
+     * Get youtubeaccount
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getYoutubeaccount()
+    {
+        return $this->youtubeaccount;
     }
 }

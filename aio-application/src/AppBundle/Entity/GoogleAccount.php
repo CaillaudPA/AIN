@@ -14,35 +14,37 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Class FacebookAccount
  * @ORM\Entity
- * @ORM\Table(name="facebookaccount")
+ * @ORM\Table(name="googleaccount")
  */
-class FacebookAccount
+class GoogleAccount
 {
     /**
-     * @var string
+     * @var int
      *
-     * @ORM\Column(name="id", length=255, type="string")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      */
     private $id;
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="User", inversedBy="facebookaccount")
+     * @ORM\ManyToOne(targetEntity="User", inversedBy="googleaccount")
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $user;
 
 
 
+
+
     /**
      * Set id
      *
-     * @param integer $id
+     * @param \interger $id
      *
      * @return FacebookAccount
      */
-    public function setId($id)
+    public function setId(\interger $id)
     {
         $this->id = $id;
 
@@ -52,7 +54,7 @@ class FacebookAccount
     /**
      * Get id
      *
-     * @return integer
+     * @return \interger
      */
     public function getId()
     {
