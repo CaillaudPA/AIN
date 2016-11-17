@@ -44,7 +44,7 @@ class YoutubeAccount
      *
      * @return FacebookAccount
      */
-    public function setId(\interger $id)
+    public function setId($id)
     {
         $this->id = $id;
 
