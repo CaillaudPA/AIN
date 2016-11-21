@@ -31,6 +31,11 @@ class User extends BaseUser
     private $facebookaccount;
 
     /**
+     * @ORM\Column(type="string")
+     */
+    private $twitterID;
+
+    /**
      * @ORM\OneToMany(targetEntity="TwitterAccount", mappedBy="user")
      */
     private $twitteraccount;
@@ -220,4 +225,22 @@ class User extends BaseUser
     {
         return $this->youtubeaccount;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getTwitterID()
+    {
+        return $this->twitterID;
+    }
+
+    /**
+     * @param mixed $twitterID
+     */
+    public function setTwitterID($twitterID)
+    {
+        $this->twitterID = $twitterID;
+    }
+
+
 }

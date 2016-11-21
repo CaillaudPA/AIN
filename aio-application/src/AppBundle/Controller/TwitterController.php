@@ -11,7 +11,7 @@ class TwitterController extends Controller
 {
 
     /**
-     * @Route("/")
+     * @Route("/connect")
      *
      * Just for example
      */
