@@ -65,7 +65,7 @@
             All In One
          </div>
       </h2>
-      <form class="ui large form" action="{{ path("fos_user_security_check") }}">
+      <form class="ui large form" action="{{ path("fos_user_security_check") }}" method="POST">
          <div class="ui stacked segment">
             <div class="field">
                <div class="ui left icon input">
@@ -80,8 +80,8 @@
                </div>
             </div>
             <div class="field">
-               <div class="ui checkbox">
-                  <input tabindex="0" name="_remember_me" class="hidden" type="checkbox">
+               <div class="ui checkbox"
+                  <input tabindex="0" name="_remember_me" class="" type="checkbox">
                   <label>Se souvenir de moi</label>
                </div>
             </div>
