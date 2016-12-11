@@ -43,5 +43,5 @@ hwi_oauth_connect:
 
 hwi_oauth_login:
     resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
-    prefix:   /list_of_connections
+    prefix:   /connect
 

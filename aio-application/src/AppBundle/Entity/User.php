@@ -31,7 +31,7 @@ class User extends BaseUser
     private $facebookaccount;
 
     /**
-     * @ORM\Column(type="string")
+     * @ORM\Column(type="string", nullable=true)
      */
     private $twitterID;
 

@@ -66,6 +66,10 @@
          </div>
       </h2>
       <form class="ui large form" action="{{ path("fos_user_security_check") }}" method="POST">
+          {% if csrf_token %}
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+          {% endif %}
+
          <div class="ui stacked segment">
             <div class="field">
                <div class="ui left icon input">

@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\AppBundle;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use AppBundle\Service\TwitterService;
@@ -11,7 +12,7 @@ class TwitterController extends Controller
 {
 
     /**
-     * @Route("/connect")
+     * @Route("/get-list")
      *
      * Just for example
      */
@@ -22,14 +23,15 @@ class TwitterController extends Controller
         $accessToken = $this->getParameter('twitter.access_token');
         $accessTokenSecret = $this->getParameter('twitter.access_secret');
 
+        $user = $this->getUser();
+        $twitterID = $user->getTwitterID();
+
+
         $twitter = new Twitter($consumerKey, $consumerSecret, $accessToken, $accessTokenSecret);
 
-        $response = $twitter->query('oauth/authenticate', 'GET', 'json', array(
-            //"oauth_callback" => "http://127.0.0.1/aio/aio-application/web/app_dev.php/twitter_connect/callback"
-        ));
+        $response = $twitter->query('statuses/user_timeline', 'GET', 'json');
 
-        //$response = $twitter->query('statuses/user_timeline', 'GET', 'json');
-        dump($response);die;
+        return $this->render('AppBundle:Twitter:twitter_timeline.html.twig', array("tweets"=>$response));
     }
 
 }
