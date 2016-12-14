@@ -31,20 +31,29 @@ class User extends BaseUser
     private $facebookaccount;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="string")
      */
     private $twitterID;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $facebookID;
 
     /**
      * @ORM\OneToMany(targetEntity="TwitterAccount", mappedBy="user")
      */
     private $twitteraccount;
-    
+
+    /**
+     * @ORM\OneToMany(targetEntity="InstagramAccount", mappedBy="user")
+     */
+    private $instagramaccount;
     /**
      * @ORM\OneToMany(targetEntity="GoogleAccount", mappedBy="user")
      */
     private $googleaccount;
-    
+
     /**
      * @ORM\OneToMany(targetEntity="YoutubeAccount", mappedBy="user")
      */
@@ -55,7 +64,42 @@ class User extends BaseUser
         parent::__construct();
         // your own logic
     }
-    
+
+    /**
+     * Add instagramaccount
+     *
+     * @param \AppBundle\Entity\InstagramAccount $instagramaccount
+     *
+     * @return User
+     */
+    public function addInstagramaccount(\AppBundle\Entity\InstagramAccount $instagramaccount)
+    {
+        $this->instagramaccount[] = $instagramaccount;
+
+        return $this;
+    }
+
+    /**
+     * Remove instagramaccount
+     *
+     * @param \AppBundle\Entity\InstagramAccount $instagramaccount
+     */
+    public function removeInstagramaccount(\AppBundle\Entity\InstagramAccount $instagramaccount)
+    {
+        $this->instagramaccount->removeElement($instagramaccount);
+    }
+
+    /**
+     * Get instagramaccount
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getInstagramaccount()
+    {
+        return $this->instagramaccount;
+    }
+
+
     /**
      * Add facebookaccount
      *
@@ -242,5 +286,20 @@ class User extends BaseUser
         $this->twitterID = $twitterID;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getFacebookID()
+    {
+        return $this->facebookID;
+    }
+
+    /**
+     * @param mixed $facebookID
+     */
+    public function setFacebookID($facebookID)
+    {
+        $this->facebookID = $facebookID;
+    }
 
 }

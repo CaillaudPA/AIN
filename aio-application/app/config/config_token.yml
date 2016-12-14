@@ -4,3 +4,9 @@ parameters:
     twitter.consumer_secret: 2l1Qe7Nq3Hf8qaBVMz6sBt0WfyT50huXSug39qjgEk7xcUe6Pq
     twitter.access_token: 1470332905-iOZjLk8oc85TsnB3bYhjfe5pL5zGxhoZRcnSonQ
     twitter.access_secret: nnMMGDsUxh5fO3Ql2L9EZVGzZb5RalrSReu7yBUnTwTua
+    facebook.consumer_key: 1793758564169938
+    facebook.consumer_secret: 2082c10d5e27c7b5ce4e323efd87079b
+    instagram.consumer_key:  a8afe610720f483489147e5f0ed7fe99
+    instagram.consumer_secret:  b53e8bf1be624a0389cca9695c9c26e1
+    google.consumer_key:  71875103763-7n8die1keh0n1c629jpl3rqva6v2eka6.apps.googleusercontent.com
+    google.consumer_secret:  9PH4EVVxgXbmX4mms8UyrU8Z

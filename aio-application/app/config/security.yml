@@ -21,6 +21,9 @@ security:
             oauth:
                 resource_owners:
                     twitter:       "/connect/check-twitter"
+                    facebook:      "/connect/check-facebook"
+                    instagram:     "/connect/check-instagram"
+                    google:     "/connect/check-google"
                 login_path:        /connect
                 failure_path:      /connect
 

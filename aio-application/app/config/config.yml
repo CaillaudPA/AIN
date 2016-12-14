@@ -83,10 +83,23 @@ hwi_oauth:
         username_iterations: 30
         properties:
             twitter: twitterID
+            facebook: facebookID
+            instagram: instagramID
+            google: googleID
     resource_owners:
         twitter:
             type: twitter
             client_id: %twitter.consumer_key%
             client_secret: %twitter.consumer_secret%
-            options:
-                include_email: true
+        facebook:
+            type: facebook
+            client_id: %facebook.consumer_key%
+            client_secret: %facebook.consumer_secret%
+        instagram:
+            type: instagram
+            client_id: %instagram.consumer_key%
+            client_secret: %instagram.consumer_secret%
+        google:
+            type: google
+            client_id: %google.consumer_key%
+            client_secret: %google.consumer_secret%
